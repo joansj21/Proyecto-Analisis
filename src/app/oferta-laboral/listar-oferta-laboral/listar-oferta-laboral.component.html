@@ -1,0 +1,29 @@
+<p>listar-oferta-laboral works!</p>
+<a mat-button routerLink="/modificarOfertaLaboral">
+  <button mat-button>Basic</button>
+
+</a>
+<!--*ngFor="let x of listaOfertaLaboral"-->
+<!--{{x.nombrePuesto}}-->
+
+<table mat-table  class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell> No. </th>
+    <td mat-cell > 123 </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell > Name </th>
+    <td mat-cell> feaf </td>
+  </ng-container>
+
+
+</table>
+
+

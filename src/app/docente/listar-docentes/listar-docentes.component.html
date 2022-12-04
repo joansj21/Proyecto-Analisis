@@ -1,0 +1,22 @@
+<div fxLayout="row wrap" fxLayout.xs="column" class="docente-container" fxLayoutGap="16px grid">
+  <mat-card fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="32%" fxFlex.md="24%"
+  fxFlex.lg="19%" fxFlex.xl="25%" *ngFor="let docente of docentes">
+      <mat-card-header>
+          <mat-card-title>
+              {{docente.nombre+' '+docente.apellidos}}
+          </mat-card-title>
+      </mat-card-header>
+
+      <img mat-card-image src="https://thumbs.dreamstime.com/b/icono-de-la-persona-en-el-fondo-blanco-111394209.jpg">
+
+      <mat-card-content class="mat-card-content-container">
+          <strong>Cursos</strong>
+          <ul *ngFor="let curso of docente.cursos">
+              <li>
+                  {{curso}}
+              </li>
+          </ul>
+      </mat-card-content>
+
+  </mat-card>
+</div>
