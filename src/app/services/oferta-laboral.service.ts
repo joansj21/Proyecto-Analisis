@@ -1,35 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 
+import { catchError, Observable, of, tap } from 'rxjs';
+
+const url:string="/api/ofertaLaboral";
+
+const requestOptions = {
+  method: 'get',
+  headers: {'Content-Type': 'application/json' },
+
+};
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class OfertaLaboralService {
+  constructor(private http:HttpClient) {}
 
-   url:string="http://localhost:8084/api/ofertaLaboral";
+  searchOfertaLaboral():Observable<any>{
 
-   httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer'
-    })
-  };
+    let urlEndPoint=url+"/getAll"
 
-  constructor(private http:HttpClient) {
 
+    return  this.http.get<any>(urlEndPoint,requestOptions);
 
   }
 
-  searchOfertaLaboral(){
-
-    let urlEndPoint=this.url+"/getAll"
-
-    console.log(urlEndPoint)
-
-
-    return this.http.get(urlEndPoint);
-
-  }
 
 
 
