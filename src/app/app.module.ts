@@ -11,6 +11,7 @@ import { DocenteRoutingModule } from './docente/docente-routing.module';
 import { ServicesModule } from './services/services.module';
 import { OfertaLaboralModule } from './oferta-laboral/oferta-laboral.module';
 import { OfertaLaboralRoutingModule } from './oferta-laboral/oferta-laboral-routing.module';
+import { HttpClient,HttpClientModule,HttpHeaders } from '@angular/common/http';
 
 
 
@@ -34,6 +35,8 @@ import { OfertaLaboralRoutingModule } from './oferta-laboral/oferta-laboral-rout
         ServicesModule,
         OfertaLaboralModule,
         OfertaLaboralRoutingModule,
+        HttpClientModule
+
 
 
     ]

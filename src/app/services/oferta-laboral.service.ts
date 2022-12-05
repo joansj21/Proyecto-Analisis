@@ -15,8 +15,21 @@ export class OfertaLaboralService {
     })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient) {
 
+
+  }
+
+  searchOfertaLaboral(){
+
+    let urlEndPoint=this.url+"/getAll"
+
+    console.log(urlEndPoint)
+
+
+    return this.http.get(urlEndPoint);
+
+  }
 
 
 

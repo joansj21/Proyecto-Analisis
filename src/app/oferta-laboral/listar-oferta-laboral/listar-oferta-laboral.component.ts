@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertaLaboral } from 'src/app/domain/ofertaLaboral/oferta-laboral';
+import { OfertaLaboralService } from 'src/app/services/oferta-laboral.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class ListarOfertaLaboralComponent implements OnInit {
   columnas: string[] = ['nombrePuesto', 'nanombreOrganizacionme', 'contacto', 'fecha','lugarResidencia'];
 
 
-  constructor() { }
+  constructor(private api:OfertaLaboralService) { }
 
   ngOnInit(): void {
   }

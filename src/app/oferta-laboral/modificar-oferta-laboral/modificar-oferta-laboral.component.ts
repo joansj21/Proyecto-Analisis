@@ -22,6 +22,11 @@ export class ModificarOfertaLaboralComponent implements OnInit{
   ngOnInit(): void {
 
 
+    console.log("holas")
+    this.api.searchOfertaLaboral().subscribe(data => {
+      console.log(data)
+    })
+
 
   }
 
