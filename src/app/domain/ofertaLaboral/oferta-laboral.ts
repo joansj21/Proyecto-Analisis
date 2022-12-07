@@ -8,6 +8,8 @@ export class OfertaLaboral {
     public fecha?: String,//Date
     public lugarResidencia?:String
 
+
+
   )
   {}
 

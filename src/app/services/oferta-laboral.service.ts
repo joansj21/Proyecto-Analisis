@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 import { catchError, Observable, of, tap } from 'rxjs';
+import { OfertaLaboral } from '../domain/ofertaLaboral/oferta-laboral';
 
 const url:string="/api/ofertaLaboral";
 
@@ -16,7 +17,11 @@ const requestOptions = {
 })
 
 export class OfertaLaboralService {
+
+
   constructor(private http:HttpClient) {}
+
+
 
   searchOfertaLaboral():Observable<any>{
 
@@ -26,6 +31,17 @@ export class OfertaLaboralService {
     return  this.http.get<any>(urlEndPoint,requestOptions);
 
   }
+
+
+  searchOfertaLaboralID(id:number):Observable<OfertaLaboral>{
+
+    let urlEndPoint=url+"/getOfertaLaboral/"+id
+
+
+    return  this.http.get<OfertaLaboral>(urlEndPoint,requestOptions);
+
+  }
+
 
 
 

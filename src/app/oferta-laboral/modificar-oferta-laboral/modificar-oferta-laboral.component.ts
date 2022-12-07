@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { OfertaLaboralService } from 'src/app/services/oferta-laboral.service';
 import { PopUpOfertaLaboralComponent } from '../pop-up-oferta-laboral/pop-up-oferta-laboral.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OfertaLaboral } from 'src/app/domain/ofertaLaboral/oferta-laboral';
 
 
 
@@ -12,19 +13,32 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './modificar-oferta-laboral.component.html',
   styleUrls: ['./modificar-oferta-laboral.component.css']
 })
+
 export class ModificarOfertaLaboralComponent implements OnInit{
 
- // @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
+
+ @Input() ofertaLaboral:OfertaLaboral;
 
 
-  constructor(private api:OfertaLaboralService,public dialog : MatDialog,private router:Router) { }
+
+  constructor(private api:OfertaLaboralService,public dialog : MatDialog,private router:Router) {
+
+
+
+  }
 
   ngOnInit(): void {
 
 
 
-    this.api.searchOfertaLaboral().subscribe(data => {
+    /*this.api.searchOfertaLaboral().subscribe(data => {
       console.log(data)
+    })*/
+
+
+    this.api.searchOfertaLaboralID(1).subscribe(data => {
+      console.log(data)
+      //this.OfertaLaboral=data;
     })
 
 
@@ -32,8 +46,15 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
   openDialog(){
    // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
-   this.dialog.open(PopUpOfertaLaboralComponent);
-    //dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());
+   let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+      dialogRef.componentInstance.
+  }
+
+  guardarOfertaLaboral(){
+
+
+
+
   }
 
 

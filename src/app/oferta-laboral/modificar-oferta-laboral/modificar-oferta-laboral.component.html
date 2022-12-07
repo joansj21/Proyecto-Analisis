@@ -2,7 +2,7 @@
 <div class="modificar-container" fxLayout="column" fxLayoutAlign="center none" >
   <h1 class="textTittle">Módulo de modificación de oferta laboral</h1>
 
-  <!--form class="ofertaLaboral-form"-->
+  <!--form class="ofertaLaboral-form" -->
 
 
   <div  fxLayout="row" fxLayoutAlign="center none" fxLayoutGap="8rem">
@@ -14,13 +14,13 @@
 
         <mat-form-field class="imput-data-large" >
          <mat-label>Nombre del puesto</mat-label>
-         <input matInput placeholder="Ex. Pizza" value="Sushi">
+         <input matInput placeholder="puesto" [(ngModel)]="ofertaLaboral.nombrePuesto">
         </mat-form-field>
 
         <div fxLayout="row" fxLayoutGap="8rem" >
             <mat-form-field class="imput-data">
              <mat-label>Numero de vacantes</mat-label>
-             <input matInput placeholder="Ex. Pizza" value="Sushi">
+             <input matInput placeholder="vacantes" value="vacantes" >
             </mat-form-field>
 
              <mat-form-field class="imput-data" >
@@ -33,12 +33,12 @@
         <div fxLayout="row" fxLayoutGap="8rem" fxLayoutAlign="space-between none">
           <mat-form-field class="imput-data">
            <mat-label>Tipo de jornada</mat-label>
-           <input matInput placeholder="Ex. Pizza" value="Sushi">
+           <input matInput placeholder="Ex. Pizza" value="Sushi" >
           </mat-form-field>
 
            <mat-form-field class="imput-data" >
             <mat-label>Extension del contrato</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput placeholder="Ex. Pizza" value="Sushi" >
            </mat-form-field>
       </div>
 
@@ -130,7 +130,7 @@
 
 
 
-
+  <button mat-mini-fab color="primary" (click)="guardarOfertaLaboral()">+</button>
 
 
 <!--/form-->

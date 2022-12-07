@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { OfertaLaboralRoutingModule } from './oferta-laboral-routing.module';
 import { ModificarOfertaLaboralComponent} from './modificar-oferta-laboral/modificar-oferta-laboral.component';
@@ -23,6 +24,7 @@ import { PopUpOfertaLaboralComponent } from './pop-up-oferta-laboral/pop-up-ofer
     OfertaLaboralRoutingModule,
     AppMaterialModule,
     FlexLayoutModule,
+    FormsModule
   ]
 })
 export class OfertaLaboralModule { }

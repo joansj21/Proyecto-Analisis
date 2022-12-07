@@ -14,6 +14,12 @@ import { OfertaLaboralRoutingModule } from './oferta-laboral/oferta-laboral-rout
 import { HttpClient,HttpClientModule,HttpHeaders } from '@angular/common/http';
 
 
+import { FormsModule } from '@angular/forms';
+
+
+
+
+
 
 
 
@@ -35,7 +41,9 @@ import { HttpClient,HttpClientModule,HttpHeaders } from '@angular/common/http';
         ServicesModule,
         OfertaLaboralModule,
         OfertaLaboralRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule,
+
 
 
 
