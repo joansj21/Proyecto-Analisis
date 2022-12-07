@@ -47,7 +47,7 @@ export class ModificarOfertaLaboralComponent implements OnInit{
   openDialog(){
    // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
-      dialogRef.componentInstance.
+     // dialogRef.componentInstance.
   }
 
   guardarOfertaLaboral(){
