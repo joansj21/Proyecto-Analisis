@@ -14,18 +14,18 @@
 
         <mat-form-field class="imput-data-large" >
          <mat-label>Nombre del puesto</mat-label>
-         <input matInput placeholder="puesto" [(ngModel)]="ofertaLaboral.nombrePuesto">
+         <input matInput  [(ngModel)]="ofertaLaboral.nombrePuesto">
         </mat-form-field>
 
         <div fxLayout="row" fxLayoutGap="8rem" >
             <mat-form-field class="imput-data">
              <mat-label>Numero de vacantes</mat-label>
-             <input matInput placeholder="vacantes" value="vacantes" >
+             <input matInput [(ngModel)]="ofertaLaboral.numVacante" >
             </mat-form-field>
 
              <mat-form-field class="imput-data" >
               <mat-label>Disponible hasta</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
+              <input matInput [(ngModel)]="ofertaLaboral.periodoVisibilidad" >
              </mat-form-field>
         </div>
 
@@ -33,20 +33,20 @@
         <div fxLayout="row" fxLayoutGap="8rem" fxLayoutAlign="space-between none">
           <mat-form-field class="imput-data">
            <mat-label>Tipo de jornada</mat-label>
-           <input matInput placeholder="Ex. Pizza" value="Sushi" >
+           <input matInput [(ngModel)]="ofertaLaboral.tipoJornada" >
           </mat-form-field>
 
            <mat-form-field class="imput-data" >
             <mat-label>Extension del contrato</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi" >
+            <input matInput [(ngModel)]="ofertaLaboral.extensionContrato" >
            </mat-form-field>
       </div>
 
 
-        <mat-form-field class="imput-data-large" >
+       <!-- <mat-form-field class="imput-data-large" >
           <mat-label>Enlace de inscripcion</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
-         </mat-form-field>
+          <input matInput [(ngModel)]="ofertaLaboral.enlaceInscripcion">
+         </mat-form-field>-->
 
 
 
@@ -55,20 +55,20 @@
 
          <mat-form-field class="imput-data-large" >
           <mat-label>Nombre de la organizacion</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+          <input matInput [(ngModel)]="ofertaLaboral.organizacion.nombre">
          </mat-form-field>
 
 
 
          <mat-form-field class="imput-data-large" >
            <mat-label>Correo de contacto</mat-label>
-           <input matInput placeholder="Ex. Pizza" value="Sushi">
+           <input matInput [(ngModel)]="ofertaLaboral.organizacion.correo">
           </mat-form-field>
 
 
          <mat-form-field class="imput-data-large" >
           <mat-label>Telefono de contacto</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+          <input matInput [(ngModel)]="ofertaLaboral.organizacion.telefono">
          </mat-form-field>
 
 
@@ -87,14 +87,14 @@
             </mat-card-content>
 
             <mat-card-content class="mat-card-content-container">
-              <strong>Idioma</strong>
+              <strong>Habilidades</strong>
               <div  fxLayoutAlign="end end"  >
                 <button mat-mini-fab color="primary" (click)="openDialog()">+</button>
               </div>
             </mat-card-content>
 
             <mat-card-content class="mat-card-content-container">
-              <strong>Idioma</strong>
+              <strong>Habilidades Blandas</strong>
               <div  fxLayoutAlign="end end"  >
                 <button mat-mini-fab color="primary" (click)="openDialog()">+</button>
               </div>
@@ -102,14 +102,14 @@
 
 
             <mat-card-content class="mat-card-content-container">
-              <strong>Idioma</strong>
+              <strong>Certificados</strong>
               <div  fxLayoutAlign="end end"  >
                 <button mat-mini-fab color="primary" (click)="openDialog()">+</button>
               </div>
             </mat-card-content>
 
             <mat-card-content class="mat-card-content-container">
-              <strong>Idioma</strong>
+              <strong>Experiencia Laboral</strong>
               <div  fxLayoutAlign="end end"  >
                 <button mat-mini-fab color="primary"  (click)="openDialog()">+</button>
               </div>
@@ -130,7 +130,7 @@
 
 
 
-  <button mat-mini-fab color="primary" (click)="guardarOfertaLaboral()">+</button>
+  <button mat-mini-fab color="primary" (click)="saveUpdate()">+</button>
 
 
 <!--/form-->

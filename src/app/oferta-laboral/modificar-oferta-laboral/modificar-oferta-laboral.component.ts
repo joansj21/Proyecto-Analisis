@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { OfertaLaboralService } from 'src/app/services/oferta-laboral.service';
 import { PopUpOfertaLaboralComponent } from '../pop-up-oferta-laboral/pop-up-oferta-laboral.component';
@@ -17,11 +17,20 @@ import { OfertaLaboral } from 'src/app/domain/ofertaLaboral/oferta-laboral';
 export class ModificarOfertaLaboralComponent implements OnInit{
 
 
- @Input() ofertaLaboral:OfertaLaboral;
+ @Input()
+   ofertaLaboral:OfertaLaboral;
+
+ //ofertaLaboral={nombrePuesto:'',numeroVacantes:'',disponibleHasta:'',tipoHornada:'',extensionContrato:'',enlaceInscripcion:'',nombreOrganizacion:'',
+  //              contacto:'',idiomas:'',habilidades:'',habilidadesBlandas:};
+
+ hola:String;
+
+
+ //@Output() event = new EventEmitter<OfertaLaboral>();
 
 
 
-  constructor(private api:OfertaLaboralService,public dialog : MatDialog,private router:Router) {
+  constructor(private service:OfertaLaboralService,public dialog : MatDialog,private router:Router) {
 
 
 
@@ -36,23 +45,41 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     })*/
 
 
-    this.api.searchOfertaLaboralID(1).subscribe(data => {
+    this.service.searchOfertaLaboralID(1).subscribe(data => {
       console.log(data)
-      //this.OfertaLaboral=data;
+      this.ofertaLaboral=data;
     })
 
 
   }
 
-  openDialog(){
+ /* openDialog(){
    // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
-     // dialogRef.componentInstance.
+     dialogRef.componentInstance.guardarDatos;
+  }*/
+
+  openDialog(){
+    // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
+    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+
+   /* const dialogSubmitSubscription = dialogRef.componentInstance.guardarDatos.subscribe(data => {
+    console. log('Got the data!', data);
+    // do something here with the data
+    dialogSubmitSubscription.unsubscribe();
+
+   });*/
+
   }
 
-  guardarOfertaLaboral(){
+
+  saveUpdate(){
 
 
+    this.service.setData(this.ofertaLaboral).subscribe(data => {
+      console.log(data)
+
+    });
 
 
   }

@@ -4,12 +4,13 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { OfertaLaboral } from '../domain/ofertaLaboral/oferta-laboral';
 
-const url:string="/api/ofertaLaboral";
-
-const requestOptions = {
-  method: 'get',
-  headers: {'Content-Type': 'application/json' },
-
+//const url:string="/api/ofertaLaboral";
+const url:string="http://localhost:8084/api/ofertaLaboral";
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer'
+  })
 };
 
 @Injectable({
@@ -28,7 +29,7 @@ export class OfertaLaboralService {
     let urlEndPoint=url+"/getAll"
 
 
-    return  this.http.get<any>(urlEndPoint,requestOptions);
+    return  this.http.get<any>(urlEndPoint,httpOptions);
 
   }
 
@@ -38,10 +39,20 @@ export class OfertaLaboralService {
     let urlEndPoint=url+"/getOfertaLaboral/"+id
 
 
-    return  this.http.get<OfertaLaboral>(urlEndPoint,requestOptions);
+    return  this.http.get<OfertaLaboral>(urlEndPoint,httpOptions);
 
   }
 
+
+  setData(ofertaLaboral:OfertaLaboral){
+
+    let urlEndPoint=url+'/update';
+    console.log(urlEndPoint)
+    console.log(ofertaLaboral)
+
+    return this.http.put<OfertaLaboral>(urlEndPoint,ofertaLaboral,httpOptions);
+
+  }
 
 
 

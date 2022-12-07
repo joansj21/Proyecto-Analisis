@@ -6,7 +6,8 @@
             cdkTextareaAutosize
             #autosize="cdkTextareaAutosize"
             cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="5"></textarea>
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="viejo"></textarea>
 </mat-form-field>
 
 
@@ -17,8 +18,9 @@
             cdkTextareaAutosize
             #autosize="cdkTextareaAutosize"
             cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="5"></textarea>
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="nuevo"></textarea>
 </mat-form-field>
 
-<button mat-button color="primary">Guardar</button>
+<button mat-button color="primary" (click)="guardarDatos()">Guardar</button>
 </div>

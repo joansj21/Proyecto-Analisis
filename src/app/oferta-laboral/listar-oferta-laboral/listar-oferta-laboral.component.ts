@@ -10,11 +10,11 @@ import { OfertaLaboralService } from 'src/app/services/oferta-laboral.service';
 })
 export class ListarOfertaLaboralComponent implements OnInit {
 
-    listaOfertaLaboral  : OfertaLaboral[] = [
+    /*listaOfertaLaboral  : OfertaLaboral[] = [
     {nombrePuesto: "dsadsa", nombreOrganizacion: 'Hydrogen', contacto: "dsdsadsa", fecha: 'H',lugarResidencia:"sdadsa"},
     {nombrePuesto: "dsadsa2", nombreOrganizacion: 'Hydrogen2', contacto: "dsdsadsa2", fecha: 'H2',lugarResidencia:"sdadsa2"}
 
-  ];
+  ];*/
 
   displayedColumns: string[] = ['nombrePuesto', 'nanombreOrganizacionme', 'contacto', 'fecha','lugarResidencia'];
   columnas: string[] = ['nombrePuesto', 'nanombreOrganizacionme', 'contacto', 'fecha','lugarResidencia'];
