@@ -63,7 +63,7 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
 
-   /* const dialogSubmitSubscription = dialogRef.componentInstance.guardarDatos.subscribe(data => {
+    /*const dialogSubmitSubscription = dialogRef.componentInstance.guardarDatos.submitClicked(data => {
     console. log('Got the data!', data);
     // do something here with the data
     dialogSubmitSubscription.unsubscribe();

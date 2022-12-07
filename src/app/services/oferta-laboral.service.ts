@@ -6,6 +6,8 @@ import { OfertaLaboral } from '../domain/ofertaLaboral/oferta-laboral';
 
 //const url:string="/api/ofertaLaboral";
 const url:string="http://localhost:8084/api/ofertaLaboral";
+
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',

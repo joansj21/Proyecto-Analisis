@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pop-up-oferta-laboral',
@@ -10,6 +10,7 @@ export class PopUpOfertaLaboralComponent implements OnInit {
 
   @Input() viejo:String;
   @Input() nuevo:String;
+  @Output() submitClicked = new EventEmitter<any>();
 
 
   constructor() { }
