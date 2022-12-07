@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pop-up-oferta-laboral',
   templateUrl: './pop-up-oferta-laboral.component.html',
   styleUrls: ['./pop-up-oferta-laboral.component.css']
 })
-export class PopUpOfertaLaboralComponent implements OnInit {
+export class PopUpOfertaLaboralComponent {
 
 
   @Input() viejo:String;
@@ -13,18 +14,23 @@ export class PopUpOfertaLaboralComponent implements OnInit {
   @Output() submitClicked = new EventEmitter<any>();
 
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<PopUpOfertaLaboralComponent>) { }
 
-  ngOnInit(): void {
-  }
 
 
 
   guardarDatos(){
 
-   // console.log(this.viejo)
-   // console.log(this.nuevo)
+   let data={
+      dataNuevo:this.nuevo,
+      dataviejo:this.viejo,
+    }
+   this.submitClicked.emit(data);
 
+   this.dialogRef.close();
   }
+
+
+
 
 }
