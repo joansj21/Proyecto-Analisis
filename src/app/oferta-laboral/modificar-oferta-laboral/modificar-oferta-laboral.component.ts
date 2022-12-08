@@ -21,6 +21,8 @@ export class ModificarOfertaLaboralComponent implements OnInit{
    ofertaLaboral:OfertaLaboral;
    @Input() id:any;
 
+   @Input() messageMod:String;
+
 
   constructor(private service:OfertaLaboralService,public dialog : MatDialog,private router:Router,private route:ActivatedRoute) {
 
@@ -174,6 +176,7 @@ export class ModificarOfertaLaboralComponent implements OnInit{
       console.log(data)
 
     });
+    this.messageMod="Se guardaron los cambios en la Oferta Laboral";
 
 
   }

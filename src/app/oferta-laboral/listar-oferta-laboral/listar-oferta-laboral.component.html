@@ -1,66 +1,71 @@
-<section id="ofertaLaboralTable">
-  <div class="container">
-      <div class="row">
+<div class="container">
+    <div class="text-center">
+      <br />
+      <br />
+      <br />
+      <br />
 
-          <div class="text-center">
-              <h2>Ofertas Laborales</h2>
-          </div>
+      <h1 class="section-heading text-uppercase">Ofertas Laborales</h1>
 
-          <div class="col-md-12 col-sm-12">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Busqueda</mat-label>
+        <input matInput placeholder="Ingresa datos" (keyup)="applyFilter($event)" />
+      </mat-form-field>
+    </div>
+</div>
 
-              <div class="table-responsive">
-                  <!--
-                  <div class="addButton">
-                      <button type="button" class="btn btn-secondary" (click)="add()" id="btnAddVehicle">+</button>
-                  </div>
--->
-                  <table class="table table-bordered table-hover" id="oferta-table">
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+      <!-- Identificacion Column -->
+      <ng-container matColumnDef="puesto_ofertado">
+          <th mat-header-cell *matHeaderCellDef><b>Nombre del Puesto Ofertado</b></th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.nombrePuesto }}
+          </td>
+        </ng-container>
 
-                      <thead>
+        <ng-container matColumnDef="organizacion">
+            <th mat-header-cell *matHeaderCellDef><b>Nombre de la Organización</b></th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.organizacion.nombre }}
+            </td>
+          </ng-container>
 
-                          <tr>
+          <ng-container matColumnDef="contacto">
+            <th mat-header-cell *matHeaderCellDef><b>Medio de Contacto</b></th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.organizacion.correo }}
+            </td>
+          </ng-container>
 
-                              <th  class="nombreLista" style="background-color: rgb(63,81,181);" >
-                                  Nombre del Puesto Ofertado
-                              </th>
-                              <th class="nombreLista" style="background-color:rgb(63,81,181);">
-                                  Nombre de la Organización
-                              </th>
-                              <th class="nombreLista" style="background-color: rgb(63,81,181);">
-                                  Medio de Contacto
-                              </th>
-                              <th class="nombreLista" style="background-color:rgb(63,81,181);">
-                                  Fecha Caducidad Oferta
-                              </th>
-                              <th class="nombreLista" style="background-color: rgb(63,81,181);">
-                                  Acción
-                              </th>
-                          </tr>
+          <ng-container matColumnDef="fecha_caducidad">
+            <th mat-header-cell *matHeaderCellDef><b>Fecha Caducidad Oferta</b></th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.periodoVisibilidad }}
+            </td>
+          </ng-container>
 
-                      </thead>
+          <!-- action Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef><b>Accion</b></th>
+            <td mat-cell *matCellDef="let element">
+              <div class="example-button-row">
+                <div class="example-button-container">
+                    <button mat-mini-fab color="primary" class="botonesLista" >CO</button>
 
-                      <tbody id="ofertasLaborales-tbody">
+                    <button mat-mini-fab color="primary" class="botonesLista" (click)="modificarOfertaLaboral(element.id)">MO</button>
 
-                          <tr *ngFor="let o of ofertaLaboral">
-                              <td scope="row">{{o.nombrePuesto}} </td>
-                              <td scope="row">{{o.organizacion.nombre}} </td>
-                              <td scope="row">{{o.organizacion.correo}} </td>
-                              <td scope="row">{{o.periodoVisibilidad}} </td>
-
-                              <td scope="row"  fxLayout="row"  fxLayoutAlign="space-evenly start" fxLayoutGap="1rem">
-                                <button mat-mini-fab color="primary" class="botonesLista" >CO</button>
-                                <button mat-mini-fab color="primary" class="botonesLista" (click)="modificarOfertaLaboral(o.id)">MO</button>
-                                <button mat-mini-fab color="primary" class="botonesLista">EO</button>
-
-                            </td>
-                              <!--td scope="row"><button mat-mini-fab color="primary" routerLink="/user-update/{{o.id}}">+</button> </td-->
-
-
-                          </tr>
-                      </tbody>
-                  </table>
+                  <button mat-mini-fab color="primary" class="botonesLista">EO</button>
+                </div>
               </div>
-          </div>
-      </div>
-  </div>
-</section>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+  <!--
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+        </mat-paginator>
+      -->
+</div>

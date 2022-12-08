@@ -1,4 +1,8 @@
 
+.btnGuardar{
+  padding: 1rem;
+}
+
 
 .imput-data-large{
 
@@ -40,6 +44,9 @@
 
 }
 
+.mod{
+  color: red;
+}
 
 .textTittle{
   text-align:center;
