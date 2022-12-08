@@ -1,29 +1,66 @@
-<p>listar-oferta-laboral works!</p>
-<a mat-button routerLink="/modificarOfertaLaboral">
-  <button mat-button>Basic</button>
+<section id="ofertaLaboralTable">
+  <div class="container">
+      <div class="row">
 
-</a>
-<!--*ngFor="let x of listaOfertaLaboral"-->
-<!--{{x.nombrePuesto}}-->
+          <div class="text-center">
+              <h2>Ofertas Laborales</h2>
+          </div>
 
-<table mat-table  class="mat-elevation-z8">
+          <div class="col-md-12 col-sm-12">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+              <div class="table-responsive">
+                  <!--
+                  <div class="addButton">
+                      <button type="button" class="btn btn-secondary" (click)="add()" id="btnAddVehicle">+</button>
+                  </div>
+-->
+                  <table class="table table-bordered table-hover" id="oferta-table">
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell> No. </th>
-    <td mat-cell > 123 </td>
-  </ng-container>
+                      <thead>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell > Name </th>
-    <td mat-cell> feaf </td>
-  </ng-container>
+                          <tr>
+
+                              <th  class="nombreLista" style="background-color: rgb(63,81,181);" >
+                                  Nombre del Puesto Ofertado
+                              </th>
+                              <th class="nombreLista" style="background-color:rgb(63,81,181);">
+                                  Nombre de la Organización
+                              </th>
+                              <th class="nombreLista" style="background-color: rgb(63,81,181);">
+                                  Medio de Contacto
+                              </th>
+                              <th class="nombreLista" style="background-color:rgb(63,81,181);">
+                                  Fecha Caducidad Oferta
+                              </th>
+                              <th class="nombreLista" style="background-color: rgb(63,81,181);">
+                                  Acción
+                              </th>
+                          </tr>
+
+                      </thead>
+
+                      <tbody id="ofertasLaborales-tbody">
+
+                          <tr *ngFor="let o of ofertaLaboral">
+                              <td scope="row">{{o.nombrePuesto}} </td>
+                              <td scope="row">{{o.organizacion.nombre}} </td>
+                              <td scope="row">{{o.organizacion.correo}} </td>
+                              <td scope="row">{{o.periodoVisibilidad}} </td>
+
+                              <td scope="row"  fxLayout="row"  fxLayoutAlign="space-evenly start" fxLayoutGap="1rem">
+                                <button mat-mini-fab color="primary" class="botonesLista" >CO</button>
+                                <button mat-mini-fab color="primary" class="botonesLista" (click)="modificarOfertaLaboral(o.id)">MO</button>
+                                <button mat-mini-fab color="primary" class="botonesLista">EO</button>
+
+                            </td>
+                              <!--td scope="row"><button mat-mini-fab color="primary" routerLink="/user-update/{{o.id}}">+</button> </td-->
 
 
-</table>
-
-
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

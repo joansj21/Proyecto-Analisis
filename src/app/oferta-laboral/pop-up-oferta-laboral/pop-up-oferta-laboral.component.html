@@ -1,5 +1,5 @@
 <div  fxLayout="column" fxLayoutAlign="space-around center">
-  <strong>Modificar</strong>
+  <strong>Modificar   {{nombre}}</strong>
 <mat-form-field  appearance="fill">
   <mat-label>Datos</mat-label>
   <textarea matInput
@@ -22,5 +22,8 @@
             [(ngModel)]="nuevo"></textarea>
 </mat-form-field>
 
+<div fxLayoutGap="1rem">
 <button mat-button color="primary" (click)="guardarDatos()">Guardar</button>
+<button mat-button color="primary" (click)="salir()">Salir</button>
+</div>
 </div>

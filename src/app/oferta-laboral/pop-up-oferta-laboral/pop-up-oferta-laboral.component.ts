@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { OfertaLaboral } from 'src/app/domain/ofertaLaboral/oferta-laboral';
 
 @Component({
   selector: 'app-pop-up-oferta-laboral',
@@ -11,10 +12,13 @@ export class PopUpOfertaLaboralComponent {
 
   @Input() viejo:String;
   @Input() nuevo:String;
+  @Input() nombre:String;
   @Output() submitClicked = new EventEmitter<any>();
 
 
-  constructor(public dialogRef: MatDialogRef<PopUpOfertaLaboralComponent>) { }
+  constructor(public dialogRef: MatDialogRef<PopUpOfertaLaboralComponent>) {
+
+  }
 
 
 
@@ -31,6 +35,8 @@ export class PopUpOfertaLaboralComponent {
   }
 
 
-
+salir(){
+  this.dialogRef.close();
+}
 
 }

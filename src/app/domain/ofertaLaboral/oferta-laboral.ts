@@ -3,11 +3,11 @@ export class OfertaLaboral {
 
   constructor(
     public id?:number,
-    public nombrePuesto?:string,
-    public tipoJornada?:string,
-    public periodoVisibilidad?:string,
-    public extensionContrato?:string,
-    public numVacante?:string,
+    public nombrePuesto?:String,
+    public tipoJornada?:String,
+    public periodoVisibilidad?:String,
+    public extensionContrato?:String,
+    public numVacante?:String,
     public organizacion?:any,
 
 

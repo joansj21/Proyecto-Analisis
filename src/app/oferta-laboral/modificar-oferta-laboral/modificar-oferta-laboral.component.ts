@@ -19,33 +19,21 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
  @Input()
    ofertaLaboral:OfertaLaboral;
-
- //ofertaLaboral={nombrePuesto:'',numeroVacantes:'',disponibleHasta:'',tipoHornada:'',extensionContrato:'',enlaceInscripcion:'',nombreOrganizacion:'',
-  //              contacto:'',idiomas:'',habilidades:'',habilidadesBlandas:};
-
- hola:String;
+   @Input() id:any;
 
 
- //@Output() event = new EventEmitter<OfertaLaboral>();
+  constructor(private service:OfertaLaboralService,public dialog : MatDialog,private router:Router,private route:ActivatedRoute) {
 
 
-
-  constructor(private service:OfertaLaboralService,public dialog : MatDialog,private router:Router) {
-
-
-
+    this.id=this.route.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
 
 
 
-    /*this.api.searchOfertaLaboral().subscribe(data => {
-      console.log(data)
-    })*/
 
-
-    this.service.searchOfertaLaboralID(1).subscribe(data => {
+    this.service.searchOfertaLaboralID(this.id).subscribe(data => {
       console.log(data)
       this.ofertaLaboral=data;
     })
@@ -53,15 +41,19 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
   }
 
- /* openDialog(){
-   // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
-   let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
-     dialogRef.componentInstance.guardarDatos;
-  }*/
 
-  openDialog(){
-    // const dialogRef = this.dialog.open(PopUpComponent, {restoreFocus: false});
+  openDialogIdioma(){
+
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+
+    let data=this.ofertaLaboral.nombrePuesto;
+
+    if (data!== undefined) {
+    dialogRef.componentInstance.viejo=data;
+    dialogRef.componentInstance.nombre="Idioma";
+    }
+
+
 
     const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
     .subscribe(result => {
@@ -71,6 +63,99 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     });
 
   }
+
+
+  openDialogHabilidades(){
+
+    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+
+    let data=this.ofertaLaboral.nombrePuesto;
+
+    if (data!== undefined) {
+    dialogRef.componentInstance.viejo=data;
+    dialogRef.componentInstance.nombre="Habilidades";
+    }
+
+
+
+    const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
+    .subscribe(result => {
+      console.log('Got the data!', result);
+      // do something here with the data
+      dialogSubmitSubscription.unsubscribe();
+    });
+
+  }
+
+
+
+  openDialogHabilidadesBlandas(){
+
+    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+
+    let data=this.ofertaLaboral.nombrePuesto;
+
+    if (data!== undefined) {
+    dialogRef.componentInstance.viejo=data;
+    dialogRef.componentInstance.nombre="Habilidades Blandas";
+    }
+
+
+
+    const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
+    .subscribe(result => {
+      console.log('Got the data!', result);
+      // do something here with the data
+      dialogSubmitSubscription.unsubscribe();
+    });
+
+  }
+
+  openDialogCertificados(){
+
+    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+
+    let data=this.ofertaLaboral.nombrePuesto;
+
+    if (data!== undefined) {
+    dialogRef.componentInstance.viejo=data;
+    dialogRef.componentInstance.nombre="Certificados";
+    }
+
+
+
+    const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
+    .subscribe(result => {
+      console.log('Got the data!', result);
+      // do something here with the data
+      dialogSubmitSubscription.unsubscribe();
+    });
+
+  }
+
+  openDialogCertificadosExperienciaLaboral(){
+
+    let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
+
+    let data=this.ofertaLaboral.nombrePuesto;
+
+    if (data!== undefined) {
+    dialogRef.componentInstance.viejo=data;
+
+    dialogRef.componentInstance.nombre="ExperienciaLaboral";
+    }
+
+
+
+    const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
+    .subscribe(result => {
+      console.log('Got the data!', result);
+      // do something here with the data
+      dialogSubmitSubscription.unsubscribe();
+    });
+
+  }
+
 
 
   saveUpdate(){
