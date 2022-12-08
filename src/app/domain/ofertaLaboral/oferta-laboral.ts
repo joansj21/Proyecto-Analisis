@@ -8,6 +8,13 @@ export class OfertaLaboral {
     public periodoVisibilidad?:String,
     public extensionContrato?:String,
     public numVacante?:String,
+
+    public habilidadesBlandas?:String,
+    public habilidadesTecnicas?:String,
+    public idiomas?:String,
+    public certificaciones?:String,
+    public experienciaLaboral?:String,
+
     public organizacion?:any,
 
 

@@ -9,6 +9,7 @@ import { DocenteRoutingModule } from '../docente/docente-routing.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { OfertaLaboralModule } from '../oferta-laboral/oferta-laboral.module';
 import { OfertaLaboralRoutingModule } from '../oferta-laboral/oferta-laboral-routing.module';
+import { SigieFooterComponent } from './sigie-footer/sigie-footer.component';
 
 
 
@@ -17,6 +18,8 @@ import { OfertaLaboralRoutingModule } from '../oferta-laboral/oferta-laboral-rou
   declarations: [
     SigieAlumniHeaderComponent,
     SigieNavbarComponent,
+    SigieFooterComponent,
+    SigieFooterComponent
 
 
   ],
@@ -33,6 +36,7 @@ SigieAlumniHeaderComponent,
 SigieNavbarComponent,
 OfertaLaboralModule,
 OfertaLaboralRoutingModule,
+SigieFooterComponent
 
   ]
 })

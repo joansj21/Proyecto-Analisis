@@ -29,7 +29,7 @@ export class PopUpOfertaLaboralComponent {
       dataNuevo:this.nuevo,
       dataviejo:this.viejo,
     }
-   this.submitClicked.emit(data);
+   this.submitClicked.emit(this.nuevo);
 
    this.dialogRef.close();
   }

@@ -46,11 +46,13 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
 
-    let data=this.ofertaLaboral.nombrePuesto;
+    let data=this.ofertaLaboral.idiomas;
+    dialogRef.componentInstance.nombre="Idioma";
 
     if (data!== undefined) {
     dialogRef.componentInstance.viejo=data;
-    dialogRef.componentInstance.nombre="Idioma";
+    dialogRef.componentInstance.nuevo=data;
+
     }
 
 
@@ -58,7 +60,8 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
     .subscribe(result => {
       console.log('Got the data!', result);
-      // do something here with the data
+
+      this.ofertaLaboral.idiomas=result;
       dialogSubmitSubscription.unsubscribe();
     });
 
@@ -69,11 +72,12 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
 
-    let data=this.ofertaLaboral.nombrePuesto;
-
+    let data=this.ofertaLaboral.habilidadesTecnicas;
+    dialogRef.componentInstance.nombre="Habilidades Tecnicas";
     if (data!== undefined) {
     dialogRef.componentInstance.viejo=data;
-    dialogRef.componentInstance.nombre="Habilidades";
+    dialogRef.componentInstance.nuevo=data;
+
     }
 
 
@@ -81,7 +85,8 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
     .subscribe(result => {
       console.log('Got the data!', result);
-      // do something here with the data
+
+      this.ofertaLaboral.habilidadesTecnicas=result;
       dialogSubmitSubscription.unsubscribe();
     });
 
@@ -93,11 +98,12 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
 
-    let data=this.ofertaLaboral.nombrePuesto;
-
+    let data=this.ofertaLaboral.habilidadesBlandas;
+    dialogRef.componentInstance.nombre="Habilidades Blandas";
     if (data!== undefined) {
     dialogRef.componentInstance.viejo=data;
-    dialogRef.componentInstance.nombre="Habilidades Blandas";
+    dialogRef.componentInstance.nuevo=data;
+
     }
 
 
@@ -105,7 +111,7 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
     .subscribe(result => {
       console.log('Got the data!', result);
-      // do something here with the data
+      this.ofertaLaboral.habilidadesBlandas=result;
       dialogSubmitSubscription.unsubscribe();
     });
 
@@ -115,11 +121,12 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
 
-    let data=this.ofertaLaboral.nombrePuesto;
-
+    let data=this.ofertaLaboral.certificaciones;
+    dialogRef.componentInstance.nombre="Certificados";
     if (data!== undefined) {
     dialogRef.componentInstance.viejo=data;
-    dialogRef.componentInstance.nombre="Certificados";
+    dialogRef.componentInstance.nuevo=data;
+
     }
 
 
@@ -127,7 +134,8 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
     .subscribe(result => {
       console.log('Got the data!', result);
-      // do something here with the data
+
+      this.ofertaLaboral.certificaciones=result;
       dialogSubmitSubscription.unsubscribe();
     });
 
@@ -137,12 +145,13 @@ export class ModificarOfertaLaboralComponent implements OnInit{
 
     let dialogRef=this.dialog.open(PopUpOfertaLaboralComponent);
 
-    let data=this.ofertaLaboral.nombrePuesto;
-
-    if (data!== undefined) {
-    dialogRef.componentInstance.viejo=data;
+    let data=this.ofertaLaboral.experienciaLaboral;
 
     dialogRef.componentInstance.nombre="ExperienciaLaboral";
+    if (data!== undefined) {
+    dialogRef.componentInstance.viejo=data;
+    dialogRef.componentInstance.nuevo=data;
+
     }
 
 
@@ -150,7 +159,7 @@ export class ModificarOfertaLaboralComponent implements OnInit{
     const dialogSubmitSubscription = dialogRef.componentInstance.submitClicked
     .subscribe(result => {
       console.log('Got the data!', result);
-      // do something here with the data
+      this.ofertaLaboral.experienciaLaboral=result;
       dialogSubmitSubscription.unsubscribe();
     });
 
